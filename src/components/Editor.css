@@ -1,0 +1,8 @@
+.Editor {
+  display: flex;
+  justify-content: center;
+}
+
+.Editor-panel {
+  margin-left: 40px;
+}

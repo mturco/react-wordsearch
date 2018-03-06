@@ -1,0 +1,15 @@
+.App,
+.App *,
+.App *::before,
+.App *::after {
+  box-sizing: border-box;
+}
+
+.App {
+  --theme-color: #03B5AA;
+  --accent-color: #DE8F6E;
+
+  padding: 20px;
+  font: 18px 'Source San Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: hsl(0, 0%, 20%);
+}

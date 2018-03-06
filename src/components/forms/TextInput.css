@@ -1,0 +1,17 @@
+.TextInput {
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid;
+  color: inherit;
+  font-size: 0.875em;
+}
+
+.TextInput:focus {
+  border-color: var(--theme-color);
+  outline: 0;
+}
+
+.TextInput::placeholder {
+  font-style: italic;
+}
