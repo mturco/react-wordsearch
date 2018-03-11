@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import wordsearch from 'wordsearch';
+import WordsearchSolver from 'word-search-solver';
 import './Editor.css';
 import Wordsearch from './Wordsearch';
 import WordList from './WordList';
@@ -46,9 +47,10 @@ class Editor extends PureComponent {
     const { words, width, height } = this.state;
     if (words.length) {
       const ws = wordsearch(words, width, height, { backwards: 0.25 });
+      const solution = WordsearchSolver(ws.grid, words);
       this.setState({
+        solution,
         puzzle: ws.grid,
-        solution: ws.solved,
         excludedWords: ws.unplaced,
       });
     } else {
@@ -76,7 +78,9 @@ class Editor extends PureComponent {
             onWordRemoved={this.handleWordRemoved}
             editable
           />
-          <Button onClick={this.toggleSolution}>{showSolution ? 'Hide' : 'Show'} solution</Button>
+          <Button className="Editor-showSolution" onClick={this.toggleSolution}>
+            {showSolution ? 'Hide solution' : 'Show solution'}
+          </Button>
         </div>
       </div>
     );

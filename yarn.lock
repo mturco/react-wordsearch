@@ -7804,6 +7804,10 @@ window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
 
+word-search-solver@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/word-search-solver/-/word-search-solver-1.1.1.tgz#5856de26f0ff757d788f3d6322afee58cb70538d"
+
 wordsearch@^0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/wordsearch/-/wordsearch-0.0.0.tgz#f0f6c4adc190139b9f9ab44b06021ceb7b64f424"
