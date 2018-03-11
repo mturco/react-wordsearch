@@ -7804,9 +7804,9 @@ window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
 
-word-search-solver@^1.1.1:
+"word-search-solver@https://github.com/mturco/word-search-solver.git#f669506a10132de5dcbf88d8858859a1c00725a4":
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/word-search-solver/-/word-search-solver-1.1.1.tgz#5856de26f0ff757d788f3d6322afee58cb70538d"
+  resolved "https://github.com/mturco/word-search-solver.git#f669506a10132de5dcbf88d8858859a1c00725a4"
 
 wordsearch@^0.0.0:
   version "0.0.0"
