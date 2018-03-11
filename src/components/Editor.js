@@ -76,6 +76,7 @@ class Editor extends PureComponent {
           <WordList
             title="Words"
             words={words}
+            emptyMessage="No words yet&mdash;add some!"
             onWordAdded={this.handleWordAdded}
             onWordRemoved={this.handleWordRemoved}
             editable

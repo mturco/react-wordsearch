@@ -11,6 +11,12 @@
   margin-bottom: 5px;
 }
 
+.WordList-emptyMessage {
+  margin: 0.5em 0;
+  font-size: 14px;
+  color: hsl(0, 0%, 40%);
+}
+
 .WordList-list {
   padding: 0;
   margin: 0;

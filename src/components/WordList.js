@@ -8,6 +8,7 @@ class WordList extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
     words: PropTypes.arrayOf(PropTypes.string),
+    emptyMessage: PropTypes.string,
     editable: PropTypes.bool,
     onWordAdded: PropTypes.func,
     onWordRemoved: PropTypes.func,
@@ -16,6 +17,7 @@ class WordList extends PureComponent {
   static defaultProps = {
     title: '',
     words: [],
+    emptyMessage: '',
     editable: false,
     onWordAdded: () => {},
     onWordRemoved: () => {},
@@ -50,6 +52,9 @@ class WordList extends PureComponent {
       <div className="WordList">
         {this.props.title &&
           <div className="WordList-heading">{this.props.title}</div>
+        }
+        {this.props.emptyMessage && this.props.words.length === 0 &&
+          <div className="WordList-emptyMessage">{this.props.emptyMessage}</div>
         }
         <ul className="WordList-list">
           {words}
