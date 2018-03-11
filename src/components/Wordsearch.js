@@ -35,6 +35,7 @@ class Cursor {
 function getLetterChildren(height, width, solution) {
   const children = create2dArray(height, width, '');
   solution.forEach((word, wordIndex) => {
+    if (!word.found) return;
     const c = new Cursor(word.firstLetter, word.lastLetter);
     word.word.split('').forEach((letter, letterIndex) => {
       const p = c.getPosition(letterIndex);

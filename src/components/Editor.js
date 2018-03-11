@@ -64,6 +64,7 @@ class Editor extends PureComponent {
   render() {
     const {
       words,
+      excludedWords,
       puzzle,
       solution,
       showSolution,
@@ -73,11 +74,18 @@ class Editor extends PureComponent {
         <Wordsearch puzzle={puzzle} solution={solution} showSolution={showSolution} />
         <div className="Editor-panel">
           <WordList
+            title="Words"
             words={words}
             onWordAdded={this.handleWordAdded}
             onWordRemoved={this.handleWordRemoved}
             editable
           />
+          {!!excludedWords.length &&
+            <WordList
+              title="Excluded"
+              words={excludedWords}
+            />
+          }
           <Button className="Editor-showSolution" onClick={this.toggleSolution}>
             {showSolution ? 'Hide solution' : 'Show solution'}
           </Button>

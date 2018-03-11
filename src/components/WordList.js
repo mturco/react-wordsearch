@@ -6,6 +6,7 @@ import TextInput from './forms/TextInput';
 
 class WordList extends PureComponent {
   static propTypes = {
+    title: PropTypes.string,
     words: PropTypes.arrayOf(PropTypes.string),
     editable: PropTypes.bool,
     onWordAdded: PropTypes.func,
@@ -13,6 +14,7 @@ class WordList extends PureComponent {
   };
 
   static defaultProps = {
+    title: '',
     words: [],
     editable: false,
     onWordAdded: () => {},
@@ -46,7 +48,9 @@ class WordList extends PureComponent {
     ));
     return (
       <div className="WordList">
-        <div className="WordList-heading">Words</div>
+        {this.props.title &&
+          <div className="WordList-heading">{this.props.title}</div>
+        }
         <ul className="WordList-list">
           {words}
         </ul>
