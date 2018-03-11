@@ -7,7 +7,7 @@
 }
 
 .Word:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: hsla(0, 0%, 0%, 0.04);
 }
 
 .Word-removeBtn {
@@ -17,7 +17,6 @@
   padding: 0;
   margin-left: auto;
   border: 0;
-  border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
   opacity: 0;
@@ -28,7 +27,7 @@
 }
 
 .Word-removeBtn:hover {
-  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--theme-color);
 }
 
 .Word-removeBtn::before,
@@ -39,6 +38,7 @@
   width: 10px;
   height: 2px;
   background-color: hsl(0, 0%, 40%);
+  background-color: currentColor;
   border-radius: 2px;
   content: '';
 }

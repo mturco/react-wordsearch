@@ -7,7 +7,9 @@
 
 .App {
   --theme-color: #03B5AA;
-  --accent-color: #DE8F6E;
+  --accent-color: #FF7104;
+  --shadow-short: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-tall: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   padding: 20px;
   font: 18px 'Source San Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
