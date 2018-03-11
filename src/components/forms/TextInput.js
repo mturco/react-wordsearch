@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './TextInput.css';
 
-class TextInput extends Component {
+class TextInput extends PureComponent {
   static propTypes = {
     onEnterPressed: PropTypes.func,
     className: PropTypes.string,
@@ -20,17 +20,6 @@ class TextInput extends Component {
     };
   }
 
-  render() {
-    const { className, onEnterPressed, ...otherProps } = this.props;
-    return (
-      <input type="text" className={`TextInput ${className}`}
-        value={this.state.value}
-        onKeyDown={this.handleKeyDown}
-        onChange={this.handleChange}
-        {...otherProps}/>
-    );
-  }
-
   handleChange = (e) => {
     this.setState({ value: e.target.value });
   };
@@ -40,6 +29,20 @@ class TextInput extends Component {
       this.props.onEnterPressed(e);
     }
   };
+
+  render() {
+    const { className, onEnterPressed, ...props } = this.props;
+    return (
+      <input
+        type="text"
+        className={`TextInput ${className}`}
+        value={this.state.value}
+        onKeyDown={this.handleKeyDown}
+        onChange={this.handleChange}
+        {...props}
+      />
+    );
+  }
 }
 
 export default TextInput;

@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-class Button extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-  };
+const Button = ({ className, ...props }) => (
+  <button className={`Button ${className}`} {...props} />
+);
 
-  static defaultProps = {
-    className: '',
-  };
+Button.propTypes = {
+  className: PropTypes.string,
+};
 
-  render() {
-    const { className, onEnterPressed, ...otherProps } = this.props;
-    return (
-      <button className={`Button ${className}`} {...otherProps}/>
-    );
-  }
-}
+Button.defaultProps = {
+  className: '',
+};
 
 export default Button;

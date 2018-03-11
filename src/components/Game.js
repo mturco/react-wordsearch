@@ -1,13 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Game.css';
 
-class Game extends Component {
-  render() {
-    return (
-      <div className="Game">
-      </div>
-    );
-  }
-}
+const Game = () => <div className="Game" />;
 
 export default Game;

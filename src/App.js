@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import './App.css';
 import Editor from './components/Editor';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={Editor}/>
-        </Switch>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <Switch>
+      <Route exact path="/" component={Editor} />
+    </Switch>
+  </div>
+);
 
 export default App;

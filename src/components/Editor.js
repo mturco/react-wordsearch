@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './Editor.css';
+import React, { PureComponent } from 'react';
 import wordsearch from 'wordsearch';
+import './Editor.css';
 import Wordsearch from './Wordsearch';
 import WordList from './WordList';
 import Button from './forms/Button';
@@ -9,7 +9,7 @@ function createEmptyPuzzle(width, height) {
   return Array(height).fill(Array(width).fill('•'));
 }
 
-class Editor extends Component {
+class Editor extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,23 +20,6 @@ class Editor extends Component {
       showSolution: false,
     };
     this.state.puzzle = createEmptyPuzzle(this.state.width, this.state.height);
-  }
-
-  render() {
-    const { words, puzzle, solution, showSolution } = this.state;
-
-    return (
-      <div className="Editor">
-        <Wordsearch puzzle={puzzle} solution={solution} showSolution={showSolution}/>
-        <div className="Editor-panel">
-          <WordList words={this.state.words}
-            onWordAdded={this.handleWordAdded}
-            onWordRemoved={this.handleWordRemoved}
-            editable/>
-          <Button onClick={this.toggleSolution}>{showSolution ? 'Hide' : 'Show'} solution</Button>
-        </div>
-      </div>
-    );
   }
 
   handleWordAdded = (word) => {
@@ -66,7 +49,7 @@ class Editor extends Component {
       this.setState({
         puzzle: ws.grid,
         solution: ws.solved,
-        excludedWords: [],
+        excludedWords: ws.unplaced,
       });
     } else {
       this.setState({
@@ -74,6 +57,29 @@ class Editor extends Component {
         excludedWords: [],
       });
     }
+  }
+
+  render() {
+    const {
+      words,
+      puzzle,
+      solution,
+      showSolution,
+    } = this.state;
+    return (
+      <div className="Editor">
+        <Wordsearch puzzle={puzzle} solution={solution} showSolution={showSolution} />
+        <div className="Editor-panel">
+          <WordList
+            words={words}
+            onWordAdded={this.handleWordAdded}
+            onWordRemoved={this.handleWordRemoved}
+            editable
+          />
+          <Button onClick={this.toggleSolution}>{showSolution ? 'Hide' : 'Show'} solution</Button>
+        </div>
+      </div>
+    );
   }
 }
 

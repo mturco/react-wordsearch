@@ -1,23 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './WordsearchLetter.css';
 
-class WordsearchLetter extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-  };
+const WordsearchLetter = ({ className, children }) => (
+  <div className={`WordsearchLetter ${className}`}>
+    {children}
+  </div>
+);
 
-  static defaultProps = {
-    className: '',
-  };
+WordsearchLetter.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+};
 
-  render() {
-    return (
-      <div className={`WordsearchLetter ${this.props.className}`}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+WordsearchLetter.defaultProps = {
+  className: '',
+};
 
 export default WordsearchLetter;

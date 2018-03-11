@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './Word.css';
 
-class Word extends Component {
+class Word extends PureComponent {
   static propTypes = {
     word: PropTypes.string.isRequired,
     controls: PropTypes.bool,
@@ -19,7 +19,9 @@ class Word extends Component {
       <li className="Word">
         <span className="Word-label">{this.props.word}</span>
         {this.props.controls &&
-          <button className="Word-removeBtn" onClick={this.props.onRemove}></button>
+          <button className="Word-removeBtn" onClick={this.props.onRemove}>
+            <span className="u-srOnly">Remove word</span>
+          </button>
         }
       </li>
     );
